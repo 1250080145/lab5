@@ -1,0 +1,60 @@
+package lab5.bai1;
+import java.util.Scanner;
+abstract class NhanVien {
+    protected String maNhanVien;
+    protected String tenNhanVien;
+    protected String trinhDo;
+    protected double luongCoBan;
+
+    public NhanVien() {
+        this.maNhanVien = "";
+        this.tenNhanVien = "";
+        this.trinhDo = "";
+        this.luongCoBan = 0.0;
+    }
+
+    public NhanVien(String maNhanVien, String tenNhanVien, String trinhDo, double luongCoBan) {
+        this.maNhanVien = maNhanVien;
+        this.tenNhanVien = tenNhanVien;
+        this.trinhDo = trinhDo;
+        this.luongCoBan = luongCoBan;
+    }
+
+    public String getMaNhanVien() {
+        return maNhanVien;
+
+    }
+
+    public String getTenNhanVien() {
+        return tenNhanVien;
+    }
+
+    public String getTrinhDo() {
+        return trinhDo;
+    }
+
+    public void setLuongCoBan(double luongCoBan) {
+        this.luongCoBan = luongCoBan;
+    }
+
+    public void nhap() {
+        Scanner kb = new Scanner(System.in);
+        System.out.print("Nhap ma nhan vien: ");
+        this.maNhanVien = kb.nextLine();
+        System.out.print("Nhap ten nhan vien: ");
+        this.tenNhanVien = kb.nextLine();
+        System.out.print("Nhap trinh do: ");
+        this.trinhDo = kb.nextLine();
+
+        System.out.print("Nhap luong co ban: ");
+        this.luongCoBan = kb.nextDouble();
+    }
+
+    public void xuat() {
+        System.out.println("Ma nhan vien: " + maNhanVien + ", Ten nhan vien: " +
+                tenNhanVien +
+                ", Trinh do: " + trinhDo + ", Luong co ban: " + luongCoBan);
+    }
+
+    public abstract double tinhLuong();
+}
